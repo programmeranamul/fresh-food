@@ -10,3 +10,6 @@ header nav a {
   cursor: pointer;
   margin-top: -10px;
 }
+.login-Button{
+  width: 80px;
+}
