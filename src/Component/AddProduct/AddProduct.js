@@ -35,7 +35,7 @@ const AddProduct = () => {
       price:data.price
     }
   
-    fetch("https://strawberry-shortcake-09710.herokuapp.com/addProduct", {
+    fetch("https://cherry-shortcake-72062.herokuapp.com/addProduct", {
       method:'POST',
       headers:{
         'content-type':'application/json'

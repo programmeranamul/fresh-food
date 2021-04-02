@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     setSpinner(true)
  
-    fetch("https://strawberry-shortcake-09710.herokuapp.com/allProduct")
+    fetch("https://cherry-shortcake-72062.herokuapp.com/allProduct")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data)

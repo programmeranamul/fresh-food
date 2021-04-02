@@ -12,7 +12,7 @@ const Order = () => {
   useEffect(() => {
     setSpinner(true);
     fetch(
-      "https://strawberry-shortcake-09710.herokuapp.com/booking?email=" +
+      "https://cherry-shortcake-72062.herokuapp.com/booking?email=" +
         logedInUser.email
     )
       .then((res) => res.json())

@@ -1,0 +1,11 @@
+.single-product{
+    height: 425px;
+}
+.card-body{
+    padding-bottom: 7px;
+}
+.card-footer{
+    background: none ;
+    border: none ;
+    padding-top: 0;
+}

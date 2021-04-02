@@ -1,13 +1,12 @@
 import React, { useContext, useState } from "react";
 import "./LogIn.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./Firebase.Config";
 import { userContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
-
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -17,7 +16,7 @@ if (!firebase.apps.length) {
 
 const LogIn = () => {
   const [logedInUser, setLogedInUser] = useContext(userContext);
-  const[authError, setAuthError] = useState({})
+  const [authError, setAuthError] = useState({});
 
   const history = useHistory();
   const location = useLocation();
@@ -30,33 +29,45 @@ const LogIn = () => {
       .auth()
       .signInWithPopup(googleProvider)
       .then((result) => {
-        const userDetails = result.user 
-     
-        setLogedInUser(userDetails)
+        const { email, displayName, photoURL } = result.user;
+        const userDetails = {
+          isError: false,
+          email: email,
+          displayName: displayName,
+          photoURL: photoURL,
+          errorMassege: "",
+        };
+
+        setLogedInUser(userDetails);
         history.replace(from);
       })
       .catch((error) => {
-        console.log(error)
-        const errorMassege = error;
-        console.log(errorMassege.message);
-        setAuthError(errorMassege)
+        const userDetails = {
+          isError: true,
+          email: "",
+          displayName: "",
+          photoURL: "",
+          errorMassege: error.message,
+        };
+
+        setLogedInUser(userDetails);
       });
-  };  
- 
-  // if(authError.message.length > 0){
-  //   console.log(authError.message);
-  // }else{
-  //   console.log("hgsd")
-  // }
+  };
 
   return (
     <section className="container LogIn-Section">
       <div className="row  mt-5 text-left justify-content-center">
         <div className="col-md-6">
-          <button className="login-button mt-5 py-2 w-100 text-left"
-            onClick={handelGoogleSingIn}>
-            <FontAwesomeIcon icon={faGoogle} className="google-icon" />Continue With Google</button>
-            {/* {authError.errorMassege && <p className="text-danger">some thisng error</p>} */}
+          <button
+            className="login-button mt-5 py-2 w-100 text-left"
+            onClick={handelGoogleSingIn}
+          >
+            <FontAwesomeIcon icon={faGoogle} className="google-icon" />
+            Continue With Google
+          </button>
+          {logedInUser.isError && (
+            <p className="text-danger mt-3">{logedInUser.errorMassege}</p>
+          )}
         </div>
       </div>
     </section>

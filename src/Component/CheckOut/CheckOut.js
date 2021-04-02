@@ -14,7 +14,7 @@ const CheckOut = () => {
 
   useEffect(() => {
     setSpinner(true)
-    fetch("https://strawberry-shortcake-09710.herokuapp.com/product/" + id)
+    fetch("https://cherry-shortcake-72062.herokuapp.com/product/" + id)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data)
@@ -39,7 +39,7 @@ const CheckOut = () => {
       price: product.price,
     };
 
-    fetch("https://strawberry-shortcake-09710.herokuapp.com/addOrder", {
+    fetch("https://cherry-shortcake-72062.herokuapp.com/addOrder", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,9 +59,9 @@ console.log(product)
       <article>
         <h2 className="mt-5">CheckOut</h2>
 
-        <div className="row d-flex justify-content-center align-items-center border-top border-bottom">
-        <div className="col-md-5 border-right responsive-custom-border">
-          <img src={product.imageURL} className="w-75" alt={product.name}/>
+        <div className="row d-flex justify-content-center align-items-center">
+        <div className="col-md-4">
+          <img src={product.imageURL} className="w-100" alt={product.name}/>
         </div>
         <div className="col-md-7 py-5 py-md-0">
             <h4>Name: {product.name}</h4>

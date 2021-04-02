@@ -9,7 +9,7 @@ const ManageProduct = () => {
   const [products, setProducts] = useState([]);
 
   const fetchProducts = () => {
-    fetch("https://strawberry-shortcake-09710.herokuapp.com/allProduct")
+    fetch("https://cherry-shortcake-72062.herokuapp.com/allProduct")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -22,7 +22,7 @@ const ManageProduct = () => {
 
   const handelDeletProduct = (productId) => {
     fetch(
-      `https://strawberry-shortcake-09710.herokuapp.com/deletProduct/${productId}`,
+      `https://cherry-shortcake-72062.herokuapp.com/deletProduct/${productId}`,
       {
         method: "delete",
         headers: {
