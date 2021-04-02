@@ -14,11 +14,10 @@ const AddProduct = () => {
     imageData.set("key", "1a8a94e26eb6b67f6c478faf06f086bd");
     imageData.append("image", event.target.files[0]);
 
-  
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
-        setImageUrl(response.data.data.display_url);    
+        setImageUrl(response.data.data.display_url);
       })
       .catch(function (error) {
         console.log(error);
@@ -26,26 +25,23 @@ const AddProduct = () => {
   };
 
   const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = (data) =>{
-   
+  const onSubmit = (data) => {
     const productData = {
-      imageURL:imageUrl,
-      name:data.name,
-      wight:data.wight,
-      price:data.price
-    }
-  
+      imageURL: imageUrl,
+      name: data.name,
+      wight: data.wight,
+      price: data.price,
+    };
+
     fetch("https://cherry-shortcake-72062.herokuapp.com/addProduct", {
-      method:'POST',
-      headers:{
-        'content-type':'application/json'
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body:JSON.stringify(productData)
-    })
-    .then(res => {
-        alert("Product Added Successfully")
-    })
-    
+      body: JSON.stringify(productData),
+    }).then((res) => {
+      alert("Product Added Successfully");
+    });
   };
   return (
     <section className="container">
@@ -63,7 +59,11 @@ const AddProduct = () => {
                   ref={register({ required: true })}
                   name="name"
                 />
-                {errors.name && <span className="text-danger">Please Enter Your Product Name</span>}
+                {errors.name && (
+                  <span className="text-danger">
+                    Please Enter Your Product Name
+                  </span>
+                )}
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
@@ -74,7 +74,11 @@ const AddProduct = () => {
                   ref={register({ required: true })}
                   name="wight"
                 />
-                {errors.wight && <span className="text-danger">Please Input Your Product Wight</span>}
+                {errors.wight && (
+                  <span className="text-danger">
+                    Please Input Your Product Wight
+                  </span>
+                )}
               </Form.Group>
             </Form.Row>
             <Form.Row>
@@ -86,7 +90,11 @@ const AddProduct = () => {
                   ref={register({ required: true })}
                   name="price"
                 />
-                {errors.price && <span className="text-danger">Please Enter Your Product Price</span>}
+                {errors.price && (
+                  <span className="text-danger">
+                    Please Enter Your Product Price
+                  </span>
+                )}
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
@@ -100,7 +108,11 @@ const AddProduct = () => {
                     ref={register({ required: true })}
                     onChange={handelImageUpload}
                   />
-                  {errors.file && <span className="text-danger">Please Enter Your Product Price</span>}
+                  {errors.file && (
+                    <span className="text-danger">
+                      Please Enter Your Product Price
+                    </span>
+                  )}
                   <label htmlFor="file" className="text-success">
                     <FontAwesomeIcon icon={faCloudUploadAlt} /> Choose a file
                   </label>

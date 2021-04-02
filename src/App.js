@@ -15,12 +15,10 @@ import NoMatch from "./Component/NoMatch/NoMatch";
 import CheckOut from "./Component/CheckOut/CheckOut";
 import Order from "./Component/Order/Order";
 import Deals from "./Component/Deals/Deals";
-
 export const userContext = createContext();
 
 function App() {
   const [logedInUser, setLogedInUser] = useState({});
-
   return (
     <userContext.Provider value={[logedInUser, setLogedInUser]}>
       <Router>
@@ -63,7 +61,6 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
-      
       </Router>
     </userContext.Provider>
   );

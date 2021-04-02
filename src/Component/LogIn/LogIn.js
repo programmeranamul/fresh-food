@@ -16,7 +16,6 @@ if (!firebase.apps.length) {
 
 const LogIn = () => {
   const [logedInUser, setLogedInUser] = useContext(userContext);
-
   const history = useHistory();
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
@@ -55,7 +54,7 @@ const LogIn = () => {
     <section className="container LogIn-Section">
       <div className="row  mt-5 text-left justify-content-center">
         <div className="col-md-6">
-        <h4 className="text-center mb-4 mt-5">Continue With Google</h4>
+          <h4 className="text-center mb-4 mt-5">Continue With Google</h4>
           <button
             className="login-button py-2 w-100 text-left btn-danger"
             onClick={handelGoogleSingIn}
@@ -71,5 +70,4 @@ const LogIn = () => {
     </section>
   );
 };
-
 export default LogIn;

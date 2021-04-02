@@ -13,11 +13,11 @@ const Profile = () => {
       .signOut()
       .then((res) => {
         const singOutUser = {
-            email:'',
-            displayName:'',
-            photoURL : ''
-        }
-        setLogedInUser(singOutUser)
+          email: "",
+          displayName: "",
+          photoURL: "",
+        };
+        setLogedInUser(singOutUser);
       })
       .catch((error) => {
         console.log(error);
