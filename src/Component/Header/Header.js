@@ -7,9 +7,9 @@ import "./Header.css";
 const Header = () => {
   const [logedInUser, setLogedInUser] = useContext(userContext);
   return (
-    <header className="bg-success">
-      <Navbar expand="lg" className="container">
-        <Navbar.Brand as={Link} to="/">
+    <header className="bg-primary">
+      <Navbar expand="lg" className="container text-white">
+        <Navbar.Brand as={Link} to="/" className="text-white">
           Fress Food
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -27,11 +27,15 @@ const Header = () => {
             <Nav.Link as={Link} to="/deals">
               Deals
             </Nav.Link>
+            {/* If user is login,then show profile optionle else show log in button */}
             {logedInUser.displayName || logedInUser.email ? (
               <Nav.Link as={Link} to="/profile">
                 <img
                   className="avatar"
-                  src={logedInUser.photoURL || "https://i.ibb.co/JqYKzYK/avatar.jpg"}
+                  src={
+                    logedInUser.photoURL ||
+                    "https://i.ibb.co/JqYKzYK/avatar.jpg"
+                  }
                   alt={logedInUser.displayName || logedInUser.email}
                 />
               </Nav.Link>

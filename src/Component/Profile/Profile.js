@@ -31,7 +31,7 @@ const Profile = () => {
         <LogInUserDetails />
         <Button
           className="d-block mx-auto mt-4"
-          variant="success"
+          variant="primary"
           onClick={handelLogOut}
         >
           Log Out

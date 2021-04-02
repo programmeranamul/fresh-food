@@ -52,7 +52,7 @@ const AddProduct = () => {
       <div className="row">
         <SideMenu />
         <div className="col-sm-9 px-4">
-          <h4 className="mb-5">Add Product</h4>
+          <h4 className="mb-3 mt-4">Add Product</h4>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">

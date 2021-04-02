@@ -6,22 +6,20 @@ import "./Home.css";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const [spinner, setSpinner] = useState(false)
+  const [spinner, setSpinner] = useState(false);
   useEffect(() => {
-    setSpinner(true)
- 
+    setSpinner(true);
     fetch("https://cherry-shortcake-72062.herokuapp.com/allProduct")
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data)
-        setSpinner(false)        
+        setProducts(data);
+        setSpinner(false);
       });
- 
   }, []);
-if(spinner){
-  return <Spinner />
-}
-
+  //spinar
+  if (spinner) {
+    return <Spinner />;
+  }
 
   return (
     <main className="container main-area">
@@ -32,8 +30,8 @@ if(spinner){
             placeholder="Search Here"
             className="search-box"
           />
-          <Button variant="success" type="button">
-            Submit
+          <Button variant="primary" type="button">
+            Search
           </Button>
         </Form>
       </section>

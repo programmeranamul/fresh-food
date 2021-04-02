@@ -16,7 +16,6 @@ if (!firebase.apps.length) {
 
 const LogIn = () => {
   const [logedInUser, setLogedInUser] = useContext(userContext);
-  const [authError, setAuthError] = useState({});
 
   const history = useHistory();
   const location = useLocation();
@@ -37,7 +36,6 @@ const LogIn = () => {
           photoURL: photoURL,
           errorMassege: "",
         };
-
         setLogedInUser(userDetails);
         history.replace(from);
       })
@@ -49,7 +47,6 @@ const LogIn = () => {
           photoURL: "",
           errorMassege: error.message,
         };
-
         setLogedInUser(userDetails);
       });
   };
@@ -58,8 +55,9 @@ const LogIn = () => {
     <section className="container LogIn-Section">
       <div className="row  mt-5 text-left justify-content-center">
         <div className="col-md-6">
+        <h4 className="text-center mb-4 mt-5">Continue With Google</h4>
           <button
-            className="login-button mt-5 py-2 w-100 text-left"
+            className="login-button py-2 w-100 text-left btn-danger"
             onClick={handelGoogleSingIn}
           >
             <FontAwesomeIcon icon={faGoogle} className="google-icon" />
