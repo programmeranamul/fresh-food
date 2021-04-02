@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 import { userContext } from "../../App";
 import LogInUserDetails from "../LogInUserDetails/LogInUserDetails";
-import "./Profile.css";
 import firebase from "firebase/app";
 
 const Profile = () => {

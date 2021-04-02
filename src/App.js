@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Component/Header/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Component/Home/Home";
-import Footer from "./Component/Footer/Footer";
 import Admin from "./Component/Admin/Admin";
 import AddProduct from "./Component/AddProduct/AddProduct";
 import ManageProduct from "./Component/ManageProduct/ManageProduct";
@@ -64,7 +63,7 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
-        <Footer />
+      
       </Router>
     </userContext.Provider>
   );

@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./Order.css";
 import { Table } from "react-bootstrap";
 import { userContext } from "../../App";
 import LogInUserDetails from "../LogInUserDetails/LogInUserDetails";

@@ -4,7 +4,6 @@ import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { userContext } from "../../App";
 import Spinner from "../Spinner/Spinner";
-import "./CheckOut.css";
 const CheckOut = () => {
   const { id } = useParams();
   const checkOutHistory = useHistory()

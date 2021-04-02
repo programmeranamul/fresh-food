@@ -15,3 +15,13 @@ aside{
     min-height: 100vh;
     padding: 35px 30px 20px 0px;
 }
+
+
+
+
+
+@media only screen and (max-width: 576px) {
+    aside{
+        min-height: 20vh;
+    }
+  }

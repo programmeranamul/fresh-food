@@ -1,9 +1,7 @@
 thead{
     background-color: white;
 }
-.check-out-section{
-    min-height: 70vh;
-}
+
 .check-out-section table tr td{
     font-weight: 700;
     border: none;

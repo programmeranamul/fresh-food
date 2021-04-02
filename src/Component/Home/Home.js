@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Products from "../Products/Products";
 import Spinner from "../Spinner/Spinner";
 import "./Home.css";
@@ -36,9 +37,15 @@ const Home = () => {
         </Form>
       </section>
       <section className="row">
-        {products.map((product) => (
+        {products.length > 0 ? <article>
+          {products.map((product) => (
           <Products key={product._id} product={product} />
         ))}
+        </article> : <article className="mt-4"><h3>No Product Found ! Please add some product</h3>
+        <Button as={Link} to="/addProduct" variant="primary" className="mt-3" type="button">
+            Add Product
+          </Button>
+        </article>}
       </section>
     </main>
   );
