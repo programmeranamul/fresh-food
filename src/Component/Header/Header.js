@@ -40,7 +40,7 @@ const Header = () => {
                 />
               </Nav.Link>
             ) : (
-              <Button as={Link} to="/logIn" variant="danger" className="ml-4 login-Button">
+              <Button as={Link} to="/logIn" variant="danger" className="ml-3 login-Button">
                 LogIn
               </Button>
             )}
