@@ -25,14 +25,11 @@ const CheckOut = () => {
   }
 
   const handelCheckOut = () => {
-    console.log(logedInUser.email);
-    console.log(logedInUser.displayName);
     const orderDetails = {
       orderBy: logedInUser.displayName,
       orderOwnerEmail: logedInUser.email,
       productName: product.name,
       placeDate: new Date().toLocaleDateString(),
-      placeTime: new Date().toLocaleTimeString(),
       quantity: 1,
       wight: product.wight,
       price: product.price,
@@ -57,8 +54,8 @@ const CheckOut = () => {
     <section className="container px-5 check-out-section">
       <article>
         <h2 className="mt-5">CheckOut</h2>
-
-        <div className="row d-flex justify-content-center align-items-center">
+        
+        <div className="row d-flex justify-content-center align-items-center mt-5">
           <div className="col-md-4">
             <img src={product.imageURL} className="w-100" alt={product.name} />
           </div>
