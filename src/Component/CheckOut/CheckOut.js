@@ -49,12 +49,12 @@ const CheckOut = () => {
         }
       });
   };
-  console.log(product);
+
   return (
     <section className="container px-5 check-out-section">
       <article>
         <h2 className="mt-5">CheckOut</h2>
-        
+
         <div className="row d-flex justify-content-center align-items-center mt-5">
           <div className="col-md-4">
             <img src={product.imageURL} className="w-100" alt={product.name} />
