@@ -36,9 +36,9 @@ const Home = () => {
           </Button>
         </Form>
       </section>
-      <section className="row">
+      <section>
         {products.length > 0 ? (
-          <article>
+          <article className="row">
             {products.map((product) => (
               <Products key={product._id} product={product} />
             ))}
