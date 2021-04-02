@@ -11,7 +11,7 @@ const Products = (props) => {
   return (
     <div className="col-md-4 col-sm-6 col-12 d-sm-flex">     
       <Card className="mb-4">
-        <Card.Img variant="top" src={imageURL} />
+        <Card.Img variant="top" src={imageURL} className="card-image" />
         <Card.Body>
           <Card.Title>
             {name} {wight && ` - ${wight}`}
