@@ -31,7 +31,7 @@ const Order = () => {
       <LogInUserDetails />
       {/* Loged In User Details End*/}
       {myBookings.length > 0 ? (
-        <article className="mt-5">
+        <article className="m-5">
           <h5>Your Orders : {myBookings.length}</h5>
           <Table striped bordered hover>
             <thead className="border-bottom">

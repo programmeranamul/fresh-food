@@ -45,7 +45,7 @@ const ManageProduct = () => {
       <div className="row">
         <SideMenu />
         <div className="col-sm-9">
-          <h4 className="mb-3 mt-4">Manage Product</h4>
+          <h4 className="mb-3 m-4">Manage Product</h4>
 
           {products.length > 0 ? (
             <Table bordered hover className="maneg-product-table">
